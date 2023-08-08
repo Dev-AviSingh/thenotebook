@@ -1,0 +1,143 @@
+.editor{
+    background-color: var(--primary);
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.noteTitle{
+  padding: 20px;
+  font-size: 30px;
+}
+.noteTitle pre{
+    
+  text-decoration: underline;
+}
+
+.noteContent{
+    position: absolute;
+    padding: 20px;
+    width: calc(100% - 40px);
+    height: max-content;
+}
+.noteContent > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.editableDiv{
+    position: absolute;
+    word-wrap: normal;
+    width: fit-content;
+    resize: both;
+    overflow:auto;
+    box-shadow: rgba(255, 255, 255, 0.16) 0px 1px 4px;
+    border-radius: 7px;
+    background-size: cover;
+}
+.editableDiv:hover{
+    border: 1px dashed white;
+}
+.editableDiv > pre{
+    white-space: pre-wrap;
+    padding: 5px;
+}
+.editableDiv > pre > img{
+    object-fit: scale-down;
+    width: 50px;
+    height: 50px;
+}
+.editableDiv > pre  *{
+    margin: 0px;
+    padding: 0px;
+    height: fit-content;
+    display: block;
+}
+.editableDiv > textarea{
+    color: black;
+    width: 100%;
+    height: 100%;
+    
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.editableDivButton{
+    color: black;
+}
+
+.editableDivButton > *{
+    color: black;
+}
+
+.noteUpperBar{
+    width:calc(100% - 10px);
+    height: 20px;
+    background-color: var(--secondary);
+    font-size: small;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: space-between;
+}
+.dragHandle{
+    flex: 1;
+}
+.minimiseButton{
+    margin-right: 10px;
+}
+.minimiseIcon{
+    font-size: large;
+}
+.noteButton:hover{
+    color: red;
+}
+.noteButton:active{
+    border: 1px dashed white;
+}
+
+.noContent{
+    height: calc(100% - 40px);
+    padding:20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentAdditionBox{
+    position: fixed;
+    right: 22%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contentAdditionBox > div{
+    border-radius: 2px;
+    color: var(--mainContent);
+    background-color: var(--tertiary);
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    text-align: center;
+}
+.contentAdditionBox > div >img{
+    margin-top: 3px;
+}
+.addNewFilesInput{
+    display: none;
+}
+#addNewImageButton:hover{
+    width: 100px;
+}
+
+#addNewImageButton:hover img{
+    display: none;
+}
+#addNewImageButton:hover .addNewFilesInput{
+    display: block;
+}
