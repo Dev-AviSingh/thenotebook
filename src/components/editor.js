@@ -73,7 +73,7 @@ const EditableElement = ({content, contentChangeHandler, deleteContentHandler, b
                 </div>
                 <pre style={{display:isContentHidden?"none":"inherit"}} className = "preContentEditableDiv" onDoubleClick={() => setIsBeingEdited(true)}>
                     {
-                        (content.includes("data:image"))?<img alt="Couldn't Load" src = {filteredContent} />:
+                        (content.includes("data:image"))?<span></span>:
                             isMarkdownEnabled?<ReactMarkdown>{filteredContent}</ReactMarkdown>:filteredContent
                     }
                 </pre>
@@ -160,7 +160,7 @@ const Editor = ({activeNoteID, noteChangeHandler}) => {
             if(x === 0 && y === 0)
                 y = 200;
             contentElements.unshift(
-                <Draggable key={btoa(content[i])} defaultPosition={{x:x, y:y}} handle = ".dragHandle" key={i} onStop={(e, posData) => positionChangeHandler(i, e, posData)}>
+                <Draggable key={btoa(content[i])} defaultPosition={{x:x, y:y}} handle = ".dragHandle" onStop={(e, posData) => positionChangeHandler(i, e, posData)}>
                     <div className = "noteContent">
                         <EditableElement content = {content[i]} deleteContentHandler={() => deleteContentAtPos(i)} contentChangeHandler={(c) => contentChangeHandler(i, c)}></EditableElement>
                     </div>

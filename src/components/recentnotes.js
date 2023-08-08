@@ -25,7 +25,7 @@ const RecentNotes = ({recentNoteIDs, activeNoteIDSetter}) => {
         </div>
     else
     return <div className = "recentNotesContainer">
-        RecentNotes
+        
     </div>  
 }
 
